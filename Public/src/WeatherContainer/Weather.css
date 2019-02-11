@@ -1,0 +1,45 @@
+.CurrentForcast{
+    background-image: linear-gradient(rgb(21, 41, 151), rgb(252, 252, 252));
+    text-align: center;
+    padding-top: 40%;
+    height: 80vh;
+    font-family: 'Roboto Slab', serif;
+}
+
+.hourlyForcast {
+    
+    background-image: linear-gradient(rgb(21, 41, 151), rgb(252, 252, 252));
+    font-family: 'Roboto Slab', serif;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  .hour {
+    height: 80vh;
+    width: 30vw;
+    display: inline-block;
+    color: #000;
+    border-left: 2px solid rgb(252, 252, 252);
+    text-align: center;
+    padding: 14px;
+  }
+
+  .dailyForcast {
+    
+    background-image: linear-gradient(rgb(21, 41, 151), rgb(252, 252, 252));
+    font-family: 'Roboto Slab', serif;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  .day {
+    height: 80vh;
+    width: 90vw;
+    display: inline-block;
+    color: #000;
+    border-left: 2px solid rgb(252, 252, 252);
+
+
+    text-align: center;
+    padding-top: 40%;
+  }
