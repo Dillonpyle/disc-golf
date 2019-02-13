@@ -21,9 +21,6 @@ class WeatherContainer extends Component {
         const lng = e.target.elements.lng.value;
 
 
-        //lat: 39.742,
-        //lng: -104.9915
-
         const api_call = await fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${API_KEY2}/${lat},${lng}`);
         const data = await api_call.json();
 
@@ -56,6 +53,7 @@ class WeatherContainer extends Component {
             })
         }
     }
+
 
     render() {
         return (

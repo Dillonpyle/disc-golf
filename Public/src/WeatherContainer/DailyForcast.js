@@ -88,7 +88,7 @@ const DailyForcast = ({ DailyForcast }) => {
             <div key={i} className="day">
                 <h4>High at {formattedHighTime} | Low at {formattedLowTime}</h4>
                 <h1>{day.apparentTemperatureHigh}° | {day.apparentTemperatureLow}°</h1>
-                <h3>Rain Chance{day.precipProbability}</h3>
+                <h3>Rain Chance {Math.round(day.precipProbability)}%</h3>
                 <h3>Wind Speed {day.windSpeed} | Gust {day.windGust}</h3>
             </div>
         )

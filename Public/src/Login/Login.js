@@ -32,7 +32,7 @@ export class Login extends Component {
 
 
             if (parsedResponse.data === 'login successful') {
-                this.props.history.push('/weather')
+                this.props.history.push('/map')
             }
 
             console.log(parsedResponse, 'loginResponse')

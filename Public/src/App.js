@@ -8,6 +8,10 @@ import './App.css';
 import WeatherContainer from './WeatherContainer/Weather';
 
 class App extends Component {
+  state = {
+    lat: '',
+    lng: ''
+  }
 
   loadMap() {
     if (this.props && this.props.google) {
@@ -56,13 +60,23 @@ class App extends Component {
 
   }
 
+  handleClick = (e) => {
+    this.setState({
+      lat: e.position.lat,
+      lng: e.position.lng
+    })
+    console.log(this.state)
+
+  }
+
+
   render() {
     return (
       <main>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route exact path="/map" component={MapContainer} />
-          <Route exact path="/weather" component={WeatherContainer} />
+          <Route exact path="/map" render={() => <MapContainer handleClick={this.handleClick} />} />
+          <Route exact path="/weather" render={() => <WeatherContainer lat={this.state.lat} lng={this.state.lng} />} />
         </Switch>
       </main>
     );

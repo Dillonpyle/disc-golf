@@ -1,17 +1,27 @@
+.localList{
+  background-image: linear-gradient(#4052FF, #FFF, #4052FF);
+  background-attachment: fixed; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+
+}
+
+.bigTemp{
+  font-size: 50px;
+}
 .CurrentForcast{
-    background-image: linear-gradient(rgb(21, 41, 151), rgb(252, 252, 252));
     text-align: center;
     padding-top: 40%;
-    height: 80vh;
+    min-height: 80vh;
     font-family: 'Roboto Slab', serif;
 }
 
 .hourlyForcast {
-    
-    background-image: linear-gradient(rgb(21, 41, 151), rgb(252, 252, 252));
     font-family: 'Roboto Slab', serif;
     overflow: auto;
     white-space: nowrap;
+
   }
   
   .hour {
@@ -19,17 +29,20 @@
     width: 30vw;
     display: inline-block;
     color: #000;
-    border-left: 2px solid rgb(252, 252, 252);
+    border: 1px solid #000;
     text-align: center;
     padding: 14px;
+    position: relative;
+   
   }
 
   .dailyForcast {
     
-    background-image: linear-gradient(rgb(21, 41, 151), rgb(252, 252, 252));
     font-family: 'Roboto Slab', serif;
     overflow: auto;
     white-space: nowrap;
+
+ 
   }
   
   .day {
@@ -37,9 +50,8 @@
     width: 90vw;
     display: inline-block;
     color: #000;
-    border-left: 2px solid rgb(252, 252, 252);
-
-
+    border: 1px solid #000;
     text-align: center;
     padding-top: 40%;
+
   }

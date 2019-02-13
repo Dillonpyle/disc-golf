@@ -14,7 +14,7 @@ const CurrentForcast = ({ CurrentForcast }) => {
     let hour = a.getHours();
     let min = a.getMinutes();
     let sec = a.getSeconds();
-    let formattedTime = month + ' ' + date + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+    let formattedTime = month + ' ' + date + ' ' + year;
 
     let deg = CurrentForcast[0].windBearing;
 
@@ -53,13 +53,13 @@ const CurrentForcast = ({ CurrentForcast }) => {
     }
 
 
-
     return (
         <div className='CurrentForcast'>
-            <h3>{formattedTime}</h3>
-            <h1>{CurrentForcast[0].apparentTemperature}°</h1>
+            <h3>Today's Conditions</h3>
+            <h1 className='bigTemp'>{Math.round(CurrentForcast[0].apparentTemperature)}°</h1>
             <h2>{CurrentForcast[0].windSpeed} MPH {direction}</h2>
             <h2>{CurrentForcast[0].summary}</h2>
+            <h3>Precp: {CurrentForcast[0].precipProbability}%</h3>
         </div>
     )
 

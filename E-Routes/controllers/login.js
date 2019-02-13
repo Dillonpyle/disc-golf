@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
         const user = await User.create(req.body);
 
         req.session.logged = true;
-        req.session.usernam = req.body.username;
+        req.session.username = req.body.username;
 
         res.json({
             statur: 200,
