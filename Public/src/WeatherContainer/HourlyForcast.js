@@ -1,6 +1,7 @@
 import React from 'react'
 import './Weather.css'
 
+
 const HourlyForcast = ({ HourlyForcast }) => {
     let hourlyForcast = HourlyForcast.map((hour, i) => {
 
@@ -43,20 +44,56 @@ const HourlyForcast = ({ HourlyForcast }) => {
 
         let formattedTime = month + ' ' + date + ' ' + convertedHour;
 
+        let deg = hour.windBearing;
 
-        console.log(hour)
+        if (deg > 11.25 && deg < 33.75) {
+            var direction = "NNE";
+        } else if (deg > 33.75 && deg < 56.25) {
+            var direction = "ENE";
+        } else if (deg > 56.25 && deg < 78.75) {
+            var direction = "East";
+        } else if (deg > 78.75 && deg < 101.25) {
+            var direction = "ESE";
+        } else if (deg > 101.25 && deg < 123.75) {
+            var direction = "ESE";
+        } else if (deg > 123.75 && deg < 146.25) {
+            var direction = "SE";
+        } else if (deg > 146.25 && deg < 168.75) {
+            var direction = "SSE";
+        } else if (deg > 168.75 && deg < 191.25) {
+            var direction = "South";
+        } else if (deg > 191.25 && deg < 213.75) {
+            var direction = "SSW";
+        } else if (deg > 213.75 && deg < 236.25) {
+            var direction = "SW";
+        } else if (deg > 236.25 && deg < 258.75) {
+            var direction = "WSW";
+        } else if (deg > 258.75 && deg < 281.25) {
+            var direction = "West";
+        } else if (deg > 281.25 && deg < 303.75) {
+            var direction = "WNW";
+        } else if (deg > 303.75 && deg < 326.25) {
+            var direction = "NW";
+        } else if (deg > 326.25 && deg < 348.75) {
+            var direction = "NNW";
+        } else {
+            var direction = "North";
+        }
+
+
+
         return (
-            <div key={i} className='hour'>
+            <div key={i} className='hour panel'>
                 <h3>{formattedTime}</h3>
                 <h3>Feels Like</h3>
-                <h1>{hour.apparentTemperature}°</h1>
-                <h4>Forcasted</h4>
-                <h2>{hour.temperature}</h2>
+                <h1>{Math.round(hour.apparentTemperature)}°</h1>
+                <h4>Forecasted</h4>
+                <h2>{Math.round(hour.temperature)}°</h2>
                 <h5>Wind Speed</h5>
-                <h3>{hour.windSpeed}MPH</h3>
+                <h3>{hour.windSpeed} MPH</h3>
                 <h3>Gust {hour.windGust}</h3>
                 <h4>Direction</h4>
-                <h2>{hour.windBearing}</h2>
+                <h2>{direction}</h2>
             </div>
         )
     })

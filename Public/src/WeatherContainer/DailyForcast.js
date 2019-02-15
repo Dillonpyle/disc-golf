@@ -83,9 +83,9 @@ const DailyForcast = ({ DailyForcast }) => {
 
         let formattedLowTime = monthLow + ' ' + dateLow + ' ' + convertedLowHour;
 
-        console.log(day)
+
         return (
-            <div key={i} className="day">
+            <div key={i} className="day panel">
                 <h4>High at {formattedHighTime} | Low at {formattedLowTime}</h4>
                 <h1>{day.apparentTemperatureHigh}° | {day.apparentTemperatureLow}°</h1>
                 <h3>Rain Chance {Math.round(day.precipProbability)}%</h3>

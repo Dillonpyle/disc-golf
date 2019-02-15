@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const corsOptions = {
-    orgin: 'http://localhost:3000',
+    origin: 'http://localhost:3000',
     credentials: true,
     optionSuccessStatus: 200
 }
@@ -26,7 +26,7 @@ app.use(cors(corsOptions));
 const login = require('./controllers/login');
 const user = require('./controllers/users');
 
-app.use('/api/v1/users', user);
+app.use('/users', user);
 app.use('/login', login);
 
 app.listen(process.env.PORT || 9000, () => {

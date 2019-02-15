@@ -1,7 +1,9 @@
 .localList{
-  background-image: linear-gradient(#4052FF, #FFF, #4052FF);
+  /* background-image: linear-gradient(#4052FF, #FFF, #4052FF); */
+  background-image: linear-gradient(#646CFF, #FFEE4F, #93CC2B);
+  /* background-image: radial-gradient(#FFEE4F,#646CFF, #93CC2B ); */
   background-attachment: fixed; 
-  background-position: center; 
+  background-position: top; 
   background-repeat: no-repeat; 
   background-size: cover; 
 
@@ -12,7 +14,7 @@
 }
 .CurrentForcast{
     text-align: center;
-    padding-top: 40%;
+    padding-top: 17%;
     min-height: 80vh;
     font-family: 'Roboto Slab', serif;
 }
@@ -55,3 +57,4 @@
     padding-top: 40%;
 
   }
+  

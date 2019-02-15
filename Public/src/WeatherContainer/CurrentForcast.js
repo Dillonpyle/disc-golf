@@ -1,8 +1,10 @@
 import React from 'react';
 import './Weather.css';
+import SVG from 'react-inlinesvg';
+import './Weather.css'
 
 
-const CurrentForcast = ({ CurrentForcast }) => {
+const CurrentForcast = ({ CurrentForcast, name }) => {
 
     console.log(CurrentForcast[0])
     //converts UNIX time into military time
@@ -11,9 +13,6 @@ const CurrentForcast = ({ CurrentForcast }) => {
     let year = a.getFullYear();
     let month = months[a.getMonth()];
     let date = a.getDate();
-    let hour = a.getHours();
-    let min = a.getMinutes();
-    let sec = a.getSeconds();
     let formattedTime = month + ' ' + date + ' ' + year;
 
     let deg = CurrentForcast[0].windBearing;
@@ -52,13 +51,36 @@ const CurrentForcast = ({ CurrentForcast }) => {
         var direction = "North";
     }
 
+    const iconMsgArray = [
+        { 'clear-day': '/assets/day.svg' },
+        { 'clear-night': '/assets/night.svg' },
+        { 'rain': '/assets/rainy-1.svg' },
+        { 'snow': '/assets/snowy-1.svg' },
+        { 'sleet': '/assets/snowy-1.svg' },
+        { 'wind': '/assets/day.svg' },
+        { 'fog': '/assets/cloudy-day-1.svg' },
+        { 'cloudy': '/assets/cloudy-day-1.svg' },
+        { 'partly-cloudy-day': '/assets/cloudy-day-1.svg' },
+        { 'partly-cloudy-night': '/assets/cloudy-night-1.svg' }
+    ]
+
+    let imgSrc;
+    for (let i = 0; i < iconMsgArray.length; i++) {
+        console.log('curentForcast[0].icon', CurrentForcast[0].icon)
+        if (CurrentForcast[0].icon === Object.keys(iconMsgArray[i])[0]) {
+            imgSrc = Object.values(iconMsgArray[i])[0];
+            console.log('imgSrc', imgSrc)
+        }
+    }
+
 
     return (
-        <div className='CurrentForcast'>
+        <div className='CurrentForcast panel'>
+            <SVG src={imgSrc} className='svgIcon'></SVG>
+            <h2>{name}</h2>
             <h3>Today's Conditions</h3>
             <h1 className='bigTemp'>{Math.round(CurrentForcast[0].apparentTemperature)}°</h1>
             <h2>{CurrentForcast[0].windSpeed} MPH {direction}</h2>
-            <h2>{CurrentForcast[0].summary}</h2>
             <h3>Precp: {CurrentForcast[0].precipProbability}%</h3>
         </div>
     )

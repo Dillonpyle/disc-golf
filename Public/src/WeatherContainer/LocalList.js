@@ -6,12 +6,21 @@ import './Weather.css'
 
 
 
-const LocalList = ({ hourlyForcast, dailyForcast }) => (
-    < div className="localList">
-        {hourlyForcast && <CurrentForcast CurrentForcast={hourlyForcast} />}
-        {hourlyForcast && <HourlyForcast HourlyForcast={hourlyForcast} />}
-        {dailyForcast && <DailyForcast DailyForcast={dailyForcast} />}
-    </div >
-);
+const LocalList = ({ hourlyForcast, dailyForcast, name }) => {
+
+
+
+    return (
+        < div className="localList">
+            {hourlyForcast && <CurrentForcast CurrentForcast={hourlyForcast} name={name} />}
+            {hourlyForcast && <HourlyForcast HourlyForcast={hourlyForcast} />}
+            {dailyForcast && <DailyForcast DailyForcast={dailyForcast} />}
+        </div >
+    )
+
+}
+
+
+
 
 export default LocalList;
